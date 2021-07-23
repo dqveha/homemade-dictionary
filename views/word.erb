@@ -19,3 +19,12 @@
     </div>
     <button type="submit" class="btn">Add definition</button>
   </form>
+
+<form action="/words/<%= @word.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete word</button>
+</form>
+
+
+  <a href="/words">Back to the homepage</a>
