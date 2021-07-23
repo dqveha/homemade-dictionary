@@ -29,8 +29,7 @@ end
 post('/words') do
   word = Word.new(params[:word], nil)
   word.save()
-  @words = Word.all()
-  erb(:homemade_dictionary)
+  redirect to ('/')
 end
 
 post('/words/:id/definitions/')do
@@ -43,7 +42,6 @@ end
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.update(params[:word])
-  @words = Word.all()
   erb(:word)
 end
 
@@ -57,13 +55,12 @@ end
 delete('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.delete()
-  @words = Word.all()
-  erb(:homemade_dictionary)
+  redirect to ('/')
 end
 
 delete('/words/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
   a_definition = Definition.find(params[:definition_id].to_i())
   a_definition.delete
-  @word = Word.find(params[:id].to_i())
   erb(:word)
 end
