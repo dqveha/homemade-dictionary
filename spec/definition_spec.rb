@@ -54,4 +54,14 @@ describe('#Definition') do
       expect(Definition.find(definition1.id)).to(eq(definition1))
     end
   end
+
+  describe('#update') do
+    it("updates a definition by its word id") do
+      definition1 = Definition.new("peach without fuzz", @inserted_word_id, nil)
+      definition1.save()
+      definition1.update("nectarine with fuzz", @inserted_word_id)
+      expect(definition1.inserted_definition).to(eq("nectarine with fuzz"))
+    end
+  end
+
 end

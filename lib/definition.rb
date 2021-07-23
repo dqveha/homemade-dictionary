@@ -31,4 +31,8 @@ class Definition
   def self.find(id)
     @@definitions[id]
   end
+
+  def update(inserted_definition, inserted_word_id)
+    return
+  end
 end
