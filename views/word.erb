@@ -2,38 +2,34 @@
 
 <form action="/words/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
-
   <label for="word">Fix/Change word:</label>
   <input id="word" name="word" type="text">
-<br>
+  <br>
   <button type="submit">Change</button>
 </form>
 
 <h3>Definitions</h3>
-
   <% if @word.definitions != [] %>
     <ul>
       <% @word.definitions.each do |definition| %>
-      <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.definition %></a></li>
+        <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.definition %></a></li>
       <% end %>
     </ul>
-      <% else %>
-        <p>There are no definitions yet. Please add one using the form below!</p>
-      <% end %>
+  <% else %>
+    <p>There are no definitions yet. Please add one using the form below!</p>
+  <% end %>
 
-  <form action="/words/<%= @word.id %>/definitions/" method="post">
-    <div class="form-group">
-      <label for="definition">Definition:</label>
-      <input id="definition" name="definition" class="form-control" type="text">
-    </div>
-    <button type="submit" class="btn">Add definition</button>
-  </form>
+<form action="/words/<%= @word.id %>/definitions/" method="post">
+  <div class="form-group">
+    <label for="definition">Definition:</label>
+    <input id="definition" name="definition" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add definition</button>
+</form>
 
 <form action="/words/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
-
   <button type="submit">Delete word</button>
 </form>
 
-
-  <a href="/words">Back to the homepage</a>
+<a href="/words">Back to the homepage</a>
