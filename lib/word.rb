@@ -21,4 +21,8 @@ class Word
   def ==(word_to_compare)
     self.inserted_word() == word_to_compare.inserted_word()
   end
+
+  def self.clear
+    return
+  end
 end
