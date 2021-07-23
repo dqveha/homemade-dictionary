@@ -11,7 +11,7 @@ class Word
   end
 
   def self.all
-    return
+    @@word_bank.values()
   end
 
 end
