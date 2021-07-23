@@ -12,7 +12,7 @@ class Definition
   end
 
   def self.all()
-    return
+    @@definitions.values()
   end
 
 end
