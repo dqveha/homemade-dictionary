@@ -29,4 +29,14 @@ describe('#Definition') do
     end
   end
 
+  describe('.clear') do
+    it("clears all definitions") do
+      definition1 = Definition.new("peach without fuzz", @word_id, nil)
+      definition1.save()
+      definition2 = Definition.new("nectarine with fuzz", @word_id, nil)
+      definition2.save()
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 end

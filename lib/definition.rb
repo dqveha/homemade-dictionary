@@ -23,4 +23,7 @@ class Definition
     (self.inserted_definition() == definition_to_compare.inserted_definition()) && (self.inserted_word_id() === definition_to_compare.inserted_word_id())
   end
 
+  def self.clear()
+    return
+  end
 end
