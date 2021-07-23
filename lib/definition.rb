@@ -24,6 +24,7 @@ class Definition
   end
 
   def self.clear()
-    return
+    @@definitions = {}
+    @@total_rows = 0
   end
 end
