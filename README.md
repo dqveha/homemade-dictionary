@@ -33,6 +33,7 @@ https://github.com/dqveha/homemade-dictionary.git
 ```
 docker-compose up --build
 ```
+then visit http://localhost:4567/ in the browser
 
 4. (b) or by visiting this website through Heroku
 
