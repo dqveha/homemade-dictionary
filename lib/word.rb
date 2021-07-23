@@ -14,4 +14,7 @@ class Word
     @@word_bank.values()
   end
 
+  def save
+    return
+  end
 end
