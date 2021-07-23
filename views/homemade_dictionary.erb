@@ -1,0 +1,13 @@
+<h1>Homemade Dictionary</h1>
+
+<h3>Your word bank</h3>
+
+<% if @words.any? %> <%# Array#any? checks if the array contains anything%> 
+  <ul>
+    <% @words.each do |word| %>
+    <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No words have been added. <a href="/words/new">Please add with me!</a></p>
+<% end %>

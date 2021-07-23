@@ -1,6 +1,5 @@
 class Word
   attr_reader(:inserted_word, :id)
-  attr_accessor 
 
   @@word_bank = {}
   @@total_rows = 0
