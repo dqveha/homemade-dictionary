@@ -43,8 +43,9 @@ https://safe-hamlet-94837.herokuapp.com/
 ## Known Issues:
 
 1. If user submits blank entry, then it will continue to submit with blank words/definitions.
-2. Changing a word/definition with a blank entry will show up with a blank word.
-3. Please open a pull request if you have any issues!
+2. Changing a word/definition with a blank entry will show up as an empty bullet.
+3. Manually changing the URL to redirect onto different view pages may not work as intended.
+4. Please open a pull request if you have any issues!
 
 ---
 
