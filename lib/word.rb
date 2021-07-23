@@ -26,4 +26,8 @@ class Word
     @@word_bank = {}
     @@total_rows = 0
   end
+
+  def self.find(id)
+    return
+  end
 end
