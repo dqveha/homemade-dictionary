@@ -30,4 +30,8 @@ class Word
   def self.find(id)
     @@word_bank[id]
   end
+
+  def update(inserted_word)
+    return
+  end
 end

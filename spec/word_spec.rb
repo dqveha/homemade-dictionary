@@ -45,4 +45,13 @@ describe '#Word' do
       expect(Word.find(word2.id)).to(eq(word2))
     end
   end
+
+  describe('#update') do
+    it("updates the word in case of fixing spelling") do
+      word1 = Word.new("alligator", nil)
+      word1.save()
+      word1.update("crocodile")
+      expect(word1.inserted_word).to(eq("crocodile"))
+    end
+  end
 end
