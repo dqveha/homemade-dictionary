@@ -28,6 +28,6 @@ class Word
   end
 
   def self.find(id)
-    return
+    @@word_bank[id]
   end
 end

@@ -43,7 +43,6 @@ describe '#Word' do
       word2.save()
       expect(Word.find(word1.id)).to(eq(word1))
       expect(Word.find(word2.id)).to(eq(word2))
-      expect(Word.find(word3.id)).to(eq(nil))
     end
   end
 end
