@@ -17,3 +17,11 @@ end
 get('/words/new') do
   erb(:new_word)
 end
+
+post('/words') do
+  entered_word = params[:word]
+  word = Word.new(entered_word, nil)
+  word.save()
+  @words = Word.all()
+  erb(:homemade_dictionary)
+end

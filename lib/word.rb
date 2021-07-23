@@ -37,4 +37,8 @@ class Word
   def delete()
     @@word_bank.delete(self.id)
   end
+
+  def definitions()
+    return
+  end
 end

@@ -2,10 +2,10 @@
 
 <h3>Your word bank</h3>
 
-<% if @words.any? %> <%# Array#any? checks if the array contains anything%> 
+<% if @words.any? %>
   <ul>
     <% @words.each do |word| %>
-    <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+    <li><a href="/words/<%= word.id %>"><%= word.inserted_word %></a></li>
     <% end %>
   </ul>
 <% else %>

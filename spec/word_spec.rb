@@ -1,5 +1,6 @@
 require 'rspec'
 require 'word'
+require 'definition'
 require 'pry'
 
 describe '#Word' do
@@ -63,6 +64,18 @@ describe '#Word' do
       word2.save()
       word1.delete()
       expect(Word.all()).to(eq([word2]))
+    end
+  end
+
+  describe('#definition') do
+    it("returns a word's definition(s)") do
+      word = Word.new("Peach", nil)
+      word.save()
+      definition1 = Definition.new("Nectarine with fuzz", word.id, nil)
+      definition1.save()
+      definition2 = Definition.new("Softer nectarine", word.id, nil)
+      definition2.save()
+      expect(word.definitions()).to(eq([definition1, definition2]))
     end
   end
 end
