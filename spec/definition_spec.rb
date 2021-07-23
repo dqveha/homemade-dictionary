@@ -56,7 +56,7 @@ describe('#Definition') do
   end
 
   describe('#update') do
-    it("updates a definition by its word id") do
+    it("updates a definition by its id") do
       definition1 = Definition.new("peach without fuzz", @inserted_word_id, nil)
       definition1.save()
       definition1.update("nectarine with fuzz", @inserted_word_id)
@@ -65,7 +65,7 @@ describe('#Definition') do
   end
 
   describe('#delete') do
-    it("deletes a definition by its word id") do
+    it("deletes a definition by its id") do
       definition1 = Definition.new("peach without fuzz", @inserted_word_id, nil)
       definition1.save()
       definition2 = Definition.new("nectarine with fuzz", @inserted_word_id, nil)
