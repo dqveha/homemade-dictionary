@@ -5,9 +5,19 @@
 <% if @words.any? %>
   <ul>
     <% @words.each do |word| %>
-    <li><a href="/words/<%= word.id %>"><%= word.inserted_word %></a></li>
+    <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
     <% end %>
   </ul>
 <% else %>
-  <p>No words have been added. <a href="/words/new">Please add with me!</a></p>
+  <p>Sorry, we can't find any words yet!
 <% end %>
+
+<h1>Would you like to add a word?</h1>
+
+<form action="/words" method="post">
+  <div class="form-group">
+    <label for="word">Enter word:</label>
+    <input id="word" name="word" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add</button>
+</form>

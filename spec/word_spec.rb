@@ -7,6 +7,7 @@ describe '#Word' do
 
   before(:each) do
     Word.clear()
+    Definition.clear()
   end
 
   describe('.all') do
@@ -52,7 +53,7 @@ describe '#Word' do
       word1 = Word.new("alligator", nil)
       word1.save()
       word1.update("crocodile")
-      expect(word1.inserted_word).to(eq("crocodile"))
+      expect(word1.word).to(eq("crocodile"))
     end
   end
 
@@ -71,11 +72,14 @@ describe '#Word' do
     it("returns a word's definition(s)") do
       word = Word.new("Peach", nil)
       word.save()
+      word2 = Word.new("Nectarine", nil)
+      word2.save()
       definition1 = Definition.new("Nectarine with fuzz", word.id, nil)
       definition1.save()
       definition2 = Definition.new("Softer nectarine", word.id, nil)
       definition2.save()
       expect(word.definitions()).to(eq([definition1, definition2]))
+      expect(word2.definitions()).to(eq([]))
     end
   end
 end

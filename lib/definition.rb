@@ -1,13 +1,13 @@
 class Definition
   attr_reader(:id)
-  attr_accessor(:inserted_definition, :inserted_word_id)
+  attr_accessor(:definition, :word_id)
 
   @@definitions = {}
   @@total_rows = 0
 
-  def initialize(insert_definition, inserted_word_id, id)
-    @insert_definition = insert_definition
-    @inserted_word_id = inserted_word_id
+  def initialize(definition, word_id, id)
+    @definition = definition
+    @word_id = word_id
     @id = id || @@total_rows += 1
   end
 
@@ -16,11 +16,11 @@ class Definition
   end
   
   def save
-    @@definitions[self.id] = Definition.new(self.inserted_definition, self.inserted_word_id, self.id)
+    @@definitions[self.id] = Definition.new(self.definition, self.word_id, self.id)
   end
 
   def ==(definition_to_compare)
-    (self.inserted_definition() == definition_to_compare.inserted_definition()) && (self.inserted_word_id() === definition_to_compare.inserted_word_id())
+    (self.definition() == definition_to_compare.definition()) && (self.word_id() === definition_to_compare.word_id())
   end
 
   def self.clear()
@@ -32,10 +32,10 @@ class Definition
     @@definitions[id]
   end
 
-  def update(inserted_definition, inserted_word_id)
-    self.inserted_definition = inserted_definition
-    self.inserted_word_id = inserted_word_id
-    @@definitions[self.id] = Definition.new(self.inserted_definition, self.inserted_word_id, self.id)
+  def update(definition, word_id)
+    self.definition = definition
+    self.word_id = word_id
+    @@definitions[self.id] = Definition.new(self.definition, self.word_id, self.id)
   end
 
   def delete
@@ -45,7 +45,7 @@ class Definition
   def self.find_by_word(word_id)
     definitions = []
     @@definitions.values.each do |definition|
-      if definition.inserted_word_id == word_id
+      if definition.word_id == word_id
         definitions.push(definition)
       end
     end
