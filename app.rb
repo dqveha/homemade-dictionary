@@ -27,8 +27,7 @@ get('/words/:id/definitions/:definition_id') do
 end
 
 post('/words') do
-  entered_word = params[:word]
-  word = Word.new(entered_word, nil)
+  word = Word.new(params[:word], nil)
   word.save()
   @words = Word.all()
   erb(:homemade_dictionary)
@@ -38,6 +37,13 @@ post('/words/:id/definitions/')do
   @word = Word.find(params[:id].to_i())
   a_definition = Definition.new(params[:definition], @word.id, nil)
   a_definition.save()
+  erb(:word)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:word])
+  @words = Word.all()
   erb(:word)
 end
 
