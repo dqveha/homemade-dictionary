@@ -29,6 +29,6 @@ class Definition
   end
 
   def self.find(id)
-    return
+    @@definitions[id]
   end
 end
