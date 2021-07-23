@@ -43,6 +43,12 @@ class Definition
   end
 
   def self.find_by_word(word_id)
-    return
+    definitions = []
+    @@definitions.values.each do |definition|
+      if definition.inserted_word_id == word_id
+        definitions.push(definition)
+      end
+    end
+    definitions
   end
 end
