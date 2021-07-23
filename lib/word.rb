@@ -34,4 +34,8 @@ class Word
   def update(inserted_word)
     @inserted_word = inserted_word
   end
+
+  def delete()
+    return
+  end
 end

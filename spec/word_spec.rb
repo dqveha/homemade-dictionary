@@ -54,4 +54,15 @@ describe '#Word' do
       expect(word1.inserted_word).to(eq("crocodile"))
     end
   end
+
+  describe('#delete') do
+    it("deletes the word from class variable") do
+      word1 = Word.new("alligator", nil)
+      word1.save()
+      word2 = Word.new("crocodile", nil)
+      word2.save()
+      word1.delete()
+      expect(Word.all()).to(eq([word2]))
+    end
+  end
 end
