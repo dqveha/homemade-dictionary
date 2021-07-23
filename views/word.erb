@@ -1,5 +1,7 @@
 <h2> Word: <%= @word.word %></h2>
+
 <hr>
+
 <form action="/words/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="word">Fix/Change word:</label>
@@ -11,7 +13,9 @@
   <input name="_method" type="hidden" value="delete">
   <button type="submit" class="btn-warning mb-2">Delete word</button>
 </form>
+
 <hr>
+
 <h3>Definitions</h3>
   <% if @word.definitions != [] %>
     <ul>
@@ -22,7 +26,6 @@
   <% else %>
     <p>There are no definitions yet. Please add one using the form below!</p>
   <% end %>
-
 <form action="/words/<%= @word.id %>/definitions/" method="post">
   <div class="form-group">
     <label for="definition" class="mb-1">Definition:</label>
@@ -31,6 +34,6 @@
   <button type="submit" class="btn-primary mt-4">Add definition</button>
 </form>
 
-
 <hr>
+
 <a href="/words">Back to the homepage</a>

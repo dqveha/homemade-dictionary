@@ -1,5 +1,7 @@
 <h1>Homemade Dictionary</h1>
+
 <hr>
+
 <h3>Your word bank</h3>
 <% if @words.any? %>
   <ul>
@@ -10,7 +12,14 @@
 <% else %>
   <p>Sorry, we haven't found any words yet!</p>
 <% end %>
+
+<form action="/words" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn-warning mt-2 mb-2">Clear all words</button>
+</form>
+
 <hr>
+
 <h3>Would you like to add a word?</h3>
 
 <form action="/words" method="post">

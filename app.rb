@@ -64,3 +64,8 @@ delete('/words/:id/definitions/:definition_id') do
   a_definition.delete
   erb(:word)
 end
+
+delete('/words') do
+  Word.clear
+  redirect to ('/')
+end
