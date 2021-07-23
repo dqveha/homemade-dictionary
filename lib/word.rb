@@ -36,6 +36,6 @@ class Word
   end
 
   def delete()
-    return
+    @@word_bank.delete(self.id)
   end
 end
