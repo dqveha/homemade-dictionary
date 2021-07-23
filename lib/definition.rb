@@ -37,4 +37,8 @@ class Definition
     self.inserted_word_id = inserted_word_id
     @@definitions[self.id] = Definition.new(self.inserted_definition, self.inserted_word_id, self.id)
   end
+
+  def delete
+    return
+  end
 end
