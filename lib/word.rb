@@ -32,6 +32,6 @@ class Word
   end
 
   def update(inserted_word)
-    return
+    @inserted_word = inserted_word
   end
 end
