@@ -1,12 +1,12 @@
 class Word
-  attr_reader 
+  attr_reader :inserted_word, :id
   attr_accessor 
 
   @@word_bank = {}
   @@total_rows = 0
 
-  def initialize(word, id)
-    @word = word
+  def initialize(inserted_word, id)
+    @inserted_word = inserted_word
     @id = id || @@total_rows += 1
   end
 
@@ -15,6 +15,10 @@ class Word
   end
 
   def save
-    return
+    @@word_bank[self.id] = Word.new(self.inserted_word, self.id)
+  end
+
+  def ==(word_to_compare)
+    self.inserted_word() == word_to_compare.inserted_word()
   end
 end
