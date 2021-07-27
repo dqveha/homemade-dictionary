@@ -36,7 +36,6 @@ docker-compose up --build
 and then visit http://localhost:4567/ in the browser
 ```
 
-
 4. (b) or by visiting this website through Heroku
 
 ```
@@ -45,10 +44,9 @@ https://safe-hamlet-94837.herokuapp.com/
 
 ## Known Issues:
 
-1. If user submits blank entry, then it will continue to submit with blank words/definitions.
-2. Changing a word/definition with a blank entry will show up as an empty bullet.
-3. Manually changing the URL to redirect onto different view pages may not work as intended.
-4. Please open a pull request if you have any issues!
+1. Changing a word/definition with a blank entry will show up as an empty bullet.
+2. Manually changing the URL to redirect onto different view pages may not work as intended (e.g., After adding a word, the `/words/1` pathway works but `/words/1/` does not).
+3. Please open a pull request if you have any issues!
 
 ---
 

@@ -32,7 +32,7 @@ post('/words') do
   redirect to ('/')
 end
 
-post('/words/:id/definitions/')do
+post('/words/:id/definitions')do
   @word = Word.find(params[:id].to_i())
   a_definition = Definition.new(params[:definition], @word.id, nil)
   a_definition.save()
