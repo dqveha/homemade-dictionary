@@ -31,7 +31,7 @@ describe('deletes word', {:type => :feature}) do
     visit("/words/#{word.id}")
     click_on("Delete word")
     visit('/words')
-    expect(page).to have_content('Sorry, we can\'t find any words yet!')
+    expect(page).to have_content("Sorry, we haven't found any words yet!")
   end
 end
 
