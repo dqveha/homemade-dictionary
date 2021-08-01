@@ -2,6 +2,8 @@
 
 ## [https://github.com/dqveha/homemade-dictionary](https://github.com/dqveha/homemade-dictionary)
 
+## [https://safe-hamlet-94837.herokuapp.com/](https://safe-hamlet-94837.herokuapp.com/)
+
 #### By Dave Lindqvist
 
 ---
@@ -44,9 +46,8 @@ https://safe-hamlet-94837.herokuapp.com/
 
 ## Known Issues:
 
-1. Changing a word/definition with a blank entry will show up as an empty bullet.
-2. Manually changing the URL to redirect onto different view pages may not work as intended (e.g., After adding a word, the `/words/1` pathway works but `/words/1/` does not).
-3. Please open a pull request if you have any issues!
+1. Manually changing the URL to redirect onto different view pages may not work as intended (e.g., After adding a word, the `/words/1` pathway works but `/words/1/` does not).
+2. Please open a pull request if you have any issues!
 
 ---
 
